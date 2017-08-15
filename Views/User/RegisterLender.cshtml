@@ -1,0 +1,42 @@
+@model borrower.Models.LenderRegisterViewModel
+
+<div class="col-md-6">
+    <h2>Got money you want to lend? Register here, Lender!</h2>
+    <form asp-controller="User" asp-action="HandleRegisterLender" method='post'>
+        <div class='form-group'>
+            <label asp-for="FirstName">First Name:</label>
+            <input asp-for="FirstName"/>
+            <span asp-validation-for="LastName"></span>
+        </div>
+        <div class='form-group'>
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName"/>
+            <span asp-validation-for="LastName"></span>
+        </div>
+        <div class='form-group'>
+            <label asp-for="Email"></label>
+            <input asp-for="Email"/>
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class='form-group'>
+            <label asp-for="Password"></label>
+            <input asp-for="Password"/>
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div class='form-group'>
+            <label asp-for="PasswordConfirmation"></label>
+            <input asp-for="PasswordConfirmation" type='password'>
+            <span asp-validation-for="PasswordConfirmation"></span>
+        </div>
+        <div class='form-group'>
+            <label asp-for="Money"></label>
+            <input asp-for="Money" type='number' step='1' min='1'>
+            <span asp-validation-for="Money"></span>
+        </div>
+
+        <button class='btn btn-default' type='submit'>Register Now as a Lender!</button>
+    </form>
+<a href="/login">Already exist?</a>
+<a href="/borrower">Register as a borrower!</a>
+</div>
+

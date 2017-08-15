@@ -1,0 +1,28 @@
+<h3>Welcome to your borrower page!</h3>
+<a href="/logout">Logout?</a>
+
+<h3>Name: @ViewBag.Borrower.FirstName @ViewBag.Borrower.LastName</h3>
+<h3>Amount Requested : @ViewBag.Borrower.Amount</h3>
+<h3>Amount Raised: @ViewBag.AmountRaised</h3>
+
+<h4>List of people who lent you money!</h4>
+
+<table class='table table-hover'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Amount lent</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var loan in @ViewBag.Loans)
+        {
+            <tr>
+                <td>@loan.Lender.FirstName @loan.Lender.LastName</td>
+                <td>@loan.Lender.Email</td>
+                <td>@loan.Amount</td>
+            </tr>
+        }
+    </tbody>
+</table>
